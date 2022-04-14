@@ -105,7 +105,7 @@ class Reader(object):
 
 
 # Concrete Creator (Concrete Factory)
-class HadoopReader(Reader):
+class HBaseReader(Reader):
     def createDBConnection(self, connect_kargs: dict):
         return Hive(connect_kargs)
 
@@ -113,3 +113,26 @@ class HadoopReader(Reader):
 class MySQLReader(Reader):
     def createDBConnection(self, connect_kargs: dict):
         return MySQL(connect_kargs)
+
+
+class Application(object):
+    def __init__(self):
+        self.config = readConfig()
+        if self.config['db'] == 'HBase':
+            self.reader = HBaseReader(self.config['connect_kargs'])
+        elif self.config['db'] == 'MySQL':
+            self.reader = MySQLReader(self.config['connect_kargs'])
+        else:
+            raise "Unknown DB!"
+
+    def main(self):
+        self.reader.read(self.config['cmd'])
+
+
+def readConfig() -> dict:
+    ...
+
+
+if __name__ == '__main__':
+    app = Application()
+    app.main()
