@@ -2,12 +2,12 @@ import csv
 import functools
 import os
 from abc import abstractmethod
+from typing import Callable
 
 import pandas as pd
 import pymysql
 from pyhive import hive
 from TCLIService.ttypes import TOperationState
-# from typing import Callable
 
 
 def connection(method):
@@ -23,12 +23,12 @@ def connection(method):
 # Product Interface
 class DBConnectInterface(object):
     """
-    F DB or packages based on Python Database API Specification v2.0
+    For DB packages based on Python Database API Specification v2.0
     PEP 249 : https://peps.python.org/pep-0249/
     """
-    # def __init__(self, connector: Callable, connect_kargs: dict = None):
-    #     self.connector = connector
-    #     self.connect_kargs = connect_kargs
+    def __init__(self, connector: Callable, connect_kargs: dict = None):
+        self.connector = connector
+        self.connect_kargs = connect_kargs
 
     def connect(self):
         self.conn = self.connector(**self.connect_kargs)
@@ -67,9 +67,15 @@ class DBConnectInterface(object):
 
 # Concrete Product
 class Hive(DBConnectInterface):
-    def __init__(self, connect_kargs: dict = None):
-        self.connector = hive.connect
-        self.connect_kargs = connect_kargs
+    def __init__(self):
+        connect_kargs = {
+            'host': '0.0.0.0',
+            'port': 10001,
+            'user': 'client_user',
+            'password': 'client_pwd',
+            'database': 'products'
+        }
+        super().__init__(hive.connect, connect_kargs)
 
     def _execute(self, cmd):
         self.cursor.execute(cmd, async_=True)
@@ -87,9 +93,15 @@ class Hive(DBConnectInterface):
 
 # Concrete Product
 class MySQL(DBConnectInterface):
-    def __init__(self, connect_kargs: dict = None):
-        self.connector = pymysql.connect
-        self.connect_kargs = connect_kargs
+    def __init__(self):
+        connect_kargs = {
+            'host': '0.0.0.0',
+            'port': 1433,
+            'user': 'client_user',
+            'password': 'client_pwd',
+            'database': 'products'
+        }
+        super().__init__(pymysql.connect, connect_kargs)
 
 
 # Creator (Factory)
@@ -100,28 +112,28 @@ class Reader(object):
         return db.read_date(cmd)
 
     @abstractmethod
-    def createDBConnection(self, connect_kargs: dict) -> DBConnectInterface:
+    def createDBConnection(self) -> DBConnectInterface:
         raise NotImplementedError
 
 
 # Concrete Creator (Concrete Factory)
 class HBaseReader(Reader):
-    def createDBConnection(self, connect_kargs: dict):
-        return Hive(connect_kargs)
+    def createDBConnection(self):
+        return Hive()
 
 
 class MySQLReader(Reader):
-    def createDBConnection(self, connect_kargs: dict):
-        return MySQL(connect_kargs)
+    def createDBConnection(self):
+        return MySQL()
 
 
 class Application(object):
     def __init__(self):
         self.config = readConfig()
         if self.config['db'] == 'HBase':
-            self.reader = HBaseReader(self.config['connect_kargs'])
+            self.reader = HBaseReader()
         elif self.config['db'] == 'MySQL':
-            self.reader = MySQLReader(self.config['connect_kargs'])
+            self.reader = MySQLReader()
         else:
             raise "Unknown DB!"
 
