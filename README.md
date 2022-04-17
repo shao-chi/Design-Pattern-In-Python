@@ -2,7 +2,7 @@
 
 | Creational Patterns | Behavioral Patterns | Structural Patterns |
 |---------------------|---------------------|---------------------|
-| [Factory Method](./creational/factory.py) | [Iterator](./behavioral/iterator.py) | Composite |
+| [Factory Method](./creational/factory.py) | [Iterator](./behavioral/iterator.py) | [Composite](./structural/composite.py) |
 | Abstract Factory | Chain of Responsibility | Adapter |
 | Builder | Command | Bridge |
 | Prototype | Mediator | Decorator |
