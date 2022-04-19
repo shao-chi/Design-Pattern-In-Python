@@ -8,7 +8,7 @@
 | Prototype | Mediator | Decorator |
 | Singleton | Memento | Facade |
 |  | Observer | Flyweight |
-|  | State | Proxy |
+|  | [State](./behavioral/state.py) | Proxy |
 |  | Strategy |  |
 |  | Template Method |  |
 |  | Visitor |  |
