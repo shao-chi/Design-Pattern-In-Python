@@ -9,7 +9,7 @@
 | Singleton | Memento | Facade |
 |  | Observer | Flyweight |
 |  | [State](./behavioral/state.py) | Proxy |
-|  | Strategy |  |
+|  | [Strategy](./behavioral/strategy.py) |  |
 |  | Template Method |  |
 |  | Visitor |  |
 
