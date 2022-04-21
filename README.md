@@ -6,7 +6,7 @@
 | [Abstract Factory](./creational/abstract_factory.py) | Chain of Responsibility | Adapter |
 | Builder | Command | Bridge |
 | Prototype | Mediator | Decorator |
-| Singleton | Memento | Facade |
+| [Singleton](./creational/singleton.py) | Memento | Facade |
 |  | Observer | Flyweight |
 |  | [State](./behavioral/state.py) | Proxy |
 |  | [Strategy](./behavioral/strategy.py) |  |
