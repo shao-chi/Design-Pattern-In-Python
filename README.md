@@ -5,7 +5,7 @@
 | [Factory Method](./creational/factory.py) | [Iterator](./behavioral/iterator.py) | [Composite](./structural/composite.py) |
 | [Abstract Factory](./creational/abstract_factory.py) | Chain of Responsibility | Adapter |
 | Builder | Command | Bridge |
-| Prototype | Mediator | Decorator |
+| Prototype | Mediator | [Decorator](./structural/decorator.py) |
 | [Singleton](./creational/singleton.py) | Memento | Facade |
 |  | Observer | Flyweight |
 |  | [State](./behavioral/state.py) | Proxy |
