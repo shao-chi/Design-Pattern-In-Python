@@ -7,7 +7,7 @@
 | Builder | Command | Bridge |
 | Prototype | Mediator | [Decorator](./structural/decorator.py) |
 | [Singleton](./creational/singleton.py) | Memento | Facade |
-|  | Observer | Flyweight |
+|  | [Observer](./behavioral/observer.py) | Flyweight |
 |  | [State](./behavioral/state.py) | Proxy |
 |  | [Strategy](./behavioral/strategy.py) |  |
 |  | Template Method |  |
