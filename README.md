@@ -4,7 +4,7 @@
 |---------------------|---------------------|---------------------|
 | [Factory Method](./creational/factory.py) | [Iterator](./behavioral/iterator.py) | [Composite](./structural/composite.py) |
 | [Abstract Factory](./creational/abstract_factory.py) | Chain of Responsibility | Adapter |
-| Builder | Command | Bridge |
+| Builder | [Command](./behavioral/command.py) | Bridge |
 | Prototype | Mediator | [Decorator](./structural/decorator.py) |
 | [Singleton](./creational/singleton.py) | Memento | Facade |
 |  | [Observer](./behavioral/observer.py) | Flyweight |
