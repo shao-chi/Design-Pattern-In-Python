@@ -13,6 +13,8 @@
 |  | Template Method |  |
 |  | Visitor |  |
 
+* [charactors](./charactors/): combine strategy and state patterns
+
 # Reference
 * [refactoring.guru](https://refactoring.guru/design-patterns)
 * Head First Design Patterns Building Extensible and Maintainable Object-Oriented Software by Eric Freeman, Elisabeth Robson
