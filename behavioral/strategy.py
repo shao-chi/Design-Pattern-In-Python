@@ -22,12 +22,17 @@ class TurnLeftStrategy(StrategyInterface):
         print("←←← Turn Left !!")
 
 
+class DiveIntoWaterStrategy(StrategyInterface):
+    def do(self):
+        print("↓↓↓ Dive Into Water !!")
+
+
 class TurnAroundStrategy(StrategyInterface):
     def do(self):
         print("↶↶↶ Turn Around !!")
 
 
-class Car(object):
+class Transportation(object):
     def setStrategy(self, strategy: StrategyInterface) -> None:
         self.strategy = strategy
 
@@ -35,8 +40,20 @@ class Car(object):
         self.strategy.do()
 
 
+class ElectricCar(Transportation):
+    def doStrategy(self):
+        print('Using Electric Engine --', end=' ')
+        super().doStrategy()
+
+
+class Submarine(Transportation):
+    def doStrategy(self):
+        print('On the water ~~~~~~', end=' ')
+        super().doStrategy()
+
+
 if __name__ == '__main__':
-    car = Car()
+    car = Transportation()
 
     car.setStrategy(GoStraightStrategy())
     car.doStrategy()
@@ -49,3 +66,16 @@ if __name__ == '__main__':
 
     car.setStrategy(TurnAroundStrategy())
     car.doStrategy()
+
+    e_car = ElectricCar()
+    e_car.setStrategy(GoStraightStrategy())
+    e_car.doStrategy()
+    e_car.doStrategy()
+
+    e_car.setStrategy(TurnAroundStrategy())
+    e_car.doStrategy()
+    e_car.doStrategy()
+
+    subm = Submarine()
+    subm.setStrategy(DiveIntoWaterStrategy())
+    subm.doStrategy()
