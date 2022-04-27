@@ -10,7 +10,7 @@
 |  | [Observer](./behavioral/observer.py) | Flyweight |
 |  | [State](./behavioral/state.py) | Proxy |
 |  | [Strategy](./behavioral/strategy.py) |  |
-|  | Template Method |  |
+|  | [Template Method](./behavioral/template_method.py) |  |
 |  | Visitor |  |
 
 * [charactors](./charactors/): combine strategy and state patterns
