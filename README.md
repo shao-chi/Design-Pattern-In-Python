@@ -11,7 +11,7 @@
 |  | [State](./behavioral/state.py) | Proxy |
 |  | [Strategy](./behavioral/strategy.py) |  |
 |  | [Template Method](./behavioral/template_method.py) |  |
-|  | Visitor |  |
+|  | [Visitor](./behavioral/visitor.py) |  |
 
 * [charactors](./charactors/): combine strategy and state patterns
 
