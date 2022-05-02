@@ -8,7 +8,7 @@
 | Prototype | Mediator | [Decorator](./structural/decorator.py) |
 | [Singleton](./creational/singleton.py) | Memento | [Facade](./structural/facade.py) |
 |  | [Observer](./behavioral/observer.py) | Flyweight |
-|  | [State](./behavioral/state.py) | Proxy |
+|  | [State](./behavioral/state.py) | [Proxy](./structural/proxy.py) |
 |  | [Strategy](./behavioral/strategy.py) |  |
 |  | [Template Method](./behavioral/template_method.py) |  |
 |  | [Visitor](./behavioral/visitor.py) |  |
