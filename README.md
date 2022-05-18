@@ -3,7 +3,7 @@
 | Creational Patterns | Behavioral Patterns | Structural Patterns |
 |---------------------|---------------------|---------------------|
 | [Factory Method](./creational/factory.py) | [Iterator](./behavioral/iterator.py) | [Composite](./structural/composite.py) |
-| [Abstract Factory](./creational/abstract_factory.py) | Chain of Responsibility | [Adapter](./structural/adapter.py) |
+| [Abstract Factory](./creational/abstract_factory.py) | [Chain of Responsibility](./behavioral/chain_of_responsibility.py) | [Adapter](./structural/adapter.py) |
 | [Builder](./creational/builder.py) | [Command](./behavioral/command.py) | [Bridge](./structural/bridge.py) |
 | [Prototype](./creational/prototype.py) | Mediator | [Decorator](./structural/decorator.py) |
 | [Singleton](./creational/singleton.py) | Memento | [Facade](./structural/facade.py) |
